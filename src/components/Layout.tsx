@@ -41,11 +41,11 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <div className="container mx-auto px-4 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-8">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-[#1EAEDB] to-[#0EA5E9] rounded-lg flex items-center justify-center">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#2B6EE6] to-[#1E50B8] rounded-xl flex items-center justify-center shadow-lg">
                 <span className="text-white font-heading font-bold text-xl">СС</span>
               </div>
               <div>
-                <div className="font-heading font-bold text-lg text-[#1A1F2C]">Сибирское стекло</div>
+                <div className="font-heading font-bold text-lg text-[#1A2332]">Сибирское стекло</div>
                 <div className="text-xs text-muted-foreground">РАТМ Холдинг</div>
               </div>
             </div>
@@ -56,14 +56,14 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               <Link
                 key={item.label}
                 to={item.href}
-                className={`text-sm font-medium transition-colors relative group ${
+                className={`text-sm font-semibold transition-colors relative group ${
                   location.pathname === item.href
-                    ? 'text-[#1EAEDB]'
-                    : 'text-[#1A1F2C] hover:text-[#1EAEDB]'
+                    ? 'text-[#2B6EE6]'
+                    : 'text-[#1A2332] hover:text-[#2B6EE6]'
                 }`}
               >
                 {item.label}
-                <span className={`absolute bottom-0 left-0 h-0.5 bg-[#1EAEDB] transition-all ${
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-[#2B6EE6] to-[#1E50B8] rounded-full transition-all ${
                   location.pathname === item.href ? 'w-full' : 'w-0 group-hover:w-full'
                 }`}></span>
               </Link>
@@ -72,7 +72,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
           <div className="flex items-center gap-4">
             <Link to="/contacts">
-              <Button className="hidden lg:flex bg-[#1EAEDB] hover:bg-[#0EA5E9] text-white">
+              <Button className="hidden lg:flex bg-gradient-to-r from-[#2B6EE6] to-[#1E50B8] hover:shadow-lg hover:scale-105 transition-all text-white font-semibold rounded-xl">
                 Связаться с нами
               </Button>
             </Link>
@@ -88,10 +88,10 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                     <Link
                       key={item.label}
                       to={item.href}
-                      className={`text-lg font-medium transition-colors ${
+                      className={`text-lg font-semibold transition-colors ${
                         location.pathname === item.href
-                          ? 'text-[#1EAEDB]'
-                          : 'text-[#1A1F2C] hover:text-[#1EAEDB]'
+                          ? 'text-[#2B6EE6]'
+                          : 'text-[#1A2332] hover:text-[#2B6EE6]'
                       }`}
                     >
                       {item.label}
@@ -108,36 +108,37 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         {children}
       </main>
 
-      <footer className="bg-[#1A1F2C] text-white py-16">
-        <div className="container mx-auto px-4">
+      <footer className="bg-gradient-to-br from-[#1A2332] to-[#0F1419] text-white py-16 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#2B6EE6] opacity-5 rounded-full blur-3xl"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             <div>
               <h4 className="font-heading font-bold text-lg mb-4">О компании</h4>
               <ul className="space-y-2">
-                <li><Link to="/factory" className="text-white/70 hover:text-[#1EAEDB] transition-colors">О нас</Link></li>
-                <li><Link to="/factory" className="text-white/70 hover:text-[#1EAEDB] transition-colors">История</Link></li>
-                <li><Link to="/factory" className="text-white/70 hover:text-[#1EAEDB] transition-colors">Достижения</Link></li>
-                <li><Link to="/factory" className="text-white/70 hover:text-[#1EAEDB] transition-colors">Команда</Link></li>
+                <li><Link to="/factory" className="text-white/70 hover:text-[#2B6EE6] transition-colors">О нас</Link></li>
+                <li><Link to="/factory" className="text-white/70 hover:text-[#2B6EE6] transition-colors">История</Link></li>
+                <li><Link to="/factory" className="text-white/70 hover:text-[#2B6EE6] transition-colors">Достижения</Link></li>
+                <li><Link to="/factory" className="text-white/70 hover:text-[#2B6EE6] transition-colors">Команда</Link></li>
               </ul>
             </div>
 
             <div>
               <h4 className="font-heading font-bold text-lg mb-4">Покупателям</h4>
               <ul className="space-y-2">
-                <li><Link to="/buyers" className="text-white/70 hover:text-[#1EAEDB] transition-colors">Продукция</Link></li>
-                <li><Link to="/buyers" className="text-white/70 hover:text-[#1EAEDB] transition-colors">Оставить заявку</Link></li>
-                <li><Link to="/buyers" className="text-white/70 hover:text-[#1EAEDB] transition-colors">Поставщикам</Link></li>
-                <li><Link to="/buyers" className="text-white/70 hover:text-[#1EAEDB] transition-colors">Прием стеклоотходов</Link></li>
+                <li><Link to="/buyers" className="text-white/70 hover:text-[#2B6EE6] transition-colors">Продукция</Link></li>
+                <li><Link to="/buyers" className="text-white/70 hover:text-[#2B6EE6] transition-colors">Оставить заявку</Link></li>
+                <li><Link to="/buyers" className="text-white/70 hover:text-[#2B6EE6] transition-colors">Поставщикам</Link></li>
+                <li><Link to="/buyers" className="text-white/70 hover:text-[#2B6EE6] transition-colors">Прием стеклоотходов</Link></li>
               </ul>
             </div>
 
             <div>
               <h4 className="font-heading font-bold text-lg mb-4">Информация</h4>
               <ul className="space-y-2">
-                <li><Link to="/media" className="text-white/70 hover:text-[#1EAEDB] transition-colors">Новости</Link></li>
-                <li><Link to="/media" className="text-white/70 hover:text-[#1EAEDB] transition-colors">СМИ о нас</Link></li>
-                <li><Link to="/media" className="text-white/70 hover:text-[#1EAEDB] transition-colors">Галерея</Link></li>
-                <li><Link to="/sustainability" className="text-white/70 hover:text-[#1EAEDB] transition-colors">Антикоррупция</Link></li>
+                <li><Link to="/media" className="text-white/70 hover:text-[#2B6EE6] transition-colors">Новости</Link></li>
+                <li><Link to="/media" className="text-white/70 hover:text-[#2B6EE6] transition-colors">СМИ о нас</Link></li>
+                <li><Link to="/media" className="text-white/70 hover:text-[#2B6EE6] transition-colors">Галерея</Link></li>
+                <li><Link to="/sustainability" className="text-white/70 hover:text-[#2B6EE6] transition-colors">Антикоррупция</Link></li>
               </ul>
             </div>
 
@@ -148,7 +149,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 <li>г. Новосибирск</li>
                 <li>ул. Даргомыжского, 8а, стр.20</li>
                 <li className="pt-2">
-                  <a href="mailto:sibstek@sibstek.ru" className="text-[#1EAEDB] hover:text-[#0EA5E9] transition-colors">
+                  <a href="mailto:sibstek@sibstek.ru" className="text-[#2B6EE6] hover:text-[#4080FF] transition-colors font-semibold">
                     sibstek@sibstek.ru
                   </a>
                 </li>
@@ -160,17 +161,17 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             <div className="text-white/60 text-sm">
               © 2025 ООО «Сибирское стекло». Все права защищены.
             </div>
-            <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#1EAEDB] transition-colors">
+            <div className="flex gap-3">
+              <a href="#" className="w-11 h-11 bg-white/10 rounded-xl flex items-center justify-center hover:bg-gradient-to-br hover:from-[#2B6EE6] hover:to-[#1E50B8] transition-all duration-300 hover:scale-110">
                 <Icon name="Facebook" size={20} />
               </a>
-              <a href="#" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#1EAEDB] transition-colors">
+              <a href="#" className="w-11 h-11 bg-white/10 rounded-xl flex items-center justify-center hover:bg-gradient-to-br hover:from-[#2B6EE6] hover:to-[#1E50B8] transition-all duration-300 hover:scale-110">
                 <Icon name="Twitter" size={20} />
               </a>
-              <a href="#" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#1EAEDB] transition-colors">
+              <a href="#" className="w-11 h-11 bg-white/10 rounded-xl flex items-center justify-center hover:bg-gradient-to-br hover:from-[#2B6EE6] hover:to-[#1E50B8] transition-all duration-300 hover:scale-110">
                 <Icon name="Linkedin" size={20} />
               </a>
-              <a href="#" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#1EAEDB] transition-colors">
+              <a href="#" className="w-11 h-11 bg-white/10 rounded-xl flex items-center justify-center hover:bg-gradient-to-br hover:from-[#2B6EE6] hover:to-[#1E50B8] transition-all duration-300 hover:scale-110">
                 <Icon name="Youtube" size={20} />
               </a>
             </div>
